@@ -1,0 +1,86 @@
+$base-line-height:              20px !default;
+$color-scrollbar-primary:       grey !default;
+$color-scrollbar-secondary:     silver !default; 
+$swipe-height: 30px;
+
+
+// Custom scroll bar mixin
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+.scrollable{
+    position:relative;
+    overflow:hidden;
+    margin-bottom:$base-line-height;
+    @include scrollbars(0.5em, $color-ui-secondary, $color-ui-primary);
+
+    .scroll-wrap{
+        overflow-x:auto;
+
+        &.scroll{
+
+            &:before,
+            &:after{
+                content:"";
+                height:100%;
+                position:absolute;
+                top:$swipe-height;
+                width:50px;
+                opacity:0;
+            }
+
+            &.shadow-left:before{
+                border-radius:0 10px 10px 0 / 0 50% 50% 0;
+                box-shadow:5px 0 10px rgba(0, 0, 0, 0.25);
+                right:100%;
+                opacity:1;
+            }
+
+            &.shadow-right:after{
+                border-radius:10px 0 0 10px / 50% 0 0 50%;
+                box-shadow:-5px 0 10px rgba(0, 0, 0, 0.25);
+                left:100%;
+                opacity:1;
+            }
+        }
+    }
+
+    @media (min-width: 0px) and (max-width: 720px) {
+        .swipe-icon:after{
+            display:block;
+            height:$swipe-height;
+            content:"❮ Swipe ❯";
+            text-align:right;
+            font-size:10px;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+    }
+
+    table{
+        margin:0;
+
+        @media (min-width: 0px) and (max-width: 720px) {
+            min-width:700px !important;
+        }
+    }
+}

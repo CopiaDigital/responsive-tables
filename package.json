@@ -1,0 +1,23 @@
+{
+  "name": "copia-responsive-tables",
+  "version": "0.1.0",
+  "description": "Make all tables responsive",
+  "main": "_responsive-table.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CopiaDigital/responsive-tables.git"
+  },
+  "keywords": [
+    "sass",
+    "responsive-table",
+    "tables",
+    "responsive",
+    "media"
+  ],
+  "author": "Mitch Jackson <mitchell.jackson@copiadigital.co.uk>",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/CopiaDigital/responsive-tables/issues"
+  },
+  "homepage": "https://github.com/CopiaDigital/responsive-tables"
+}
