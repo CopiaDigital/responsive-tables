@@ -31,7 +31,7 @@ $swipe-height: 30px;
     position:relative;
     overflow:hidden;
     margin-bottom:$base-line-height;
-    @include scrollbars(0.5em, $color-ui-secondary, $color-ui-primary);
+    @include scrollbars(0.5em, $color-scrollbar-secondary, $color-scrollbar-primary);
 
     .scroll-wrap{
         overflow-x:auto;
