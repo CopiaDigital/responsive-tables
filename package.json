@@ -1,6 +1,6 @@
 {
   "name": "copia-responsive-tables",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Make all tables responsive",
   "devDependencies": {
     "del": "^1.1.1",
